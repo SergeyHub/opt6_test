@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use Faker\Factory as Faker;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -36,5 +37,15 @@ class DatabaseSeeder extends Seeder
 
             ]);
         }
+
+        DB::table('users')->insert([
+            'name' => 'admin',
+            'email' => 'admin@admin.com',
+            'email_verified_at' => now(),
+            //'password' => ('\'password\' => \'$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi\''),
+            'password' => '$2y$10$SwwObP3IjeRyr5COM/zFiug4LKfWp2cRhTNZdYSQl8EZKLIpdC.Zu',
+            //'password' => '12345678/.og/at2.uheWG/igi',
+            'remember_token' => Str::random(10),
+        ]);
     }
 }

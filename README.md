@@ -29,5 +29,8 @@ php artisan db:seed
 #### deploy from git
 composer install  
 php artisan key:generate  
-php artisan migrate:fresh — seed  
+npm install  
+php artisan migrate:fresh --seed  
 php artisan serve  
+email: admin@admin.com  
+password: 12345678  
